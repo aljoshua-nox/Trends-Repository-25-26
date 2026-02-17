@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Ultimate College Life Web Page</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url("background.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .container {
+            padding: 40px;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        .dashboard-header {
+            background-color: rgba(255,255,255,0.08);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #6c63ff;
+            margin-bottom: 30px;
+			box-shadow: 0 0 20px rgba(108,99,255,0.4);
+        }
+
+        h1 {
+            color: #6c63ff;
+            text-align: center;
+            margin: 0;
+            animation: slideDown 1s ease-in;
+        }
+
+        h2 {
+            color: #00f7ff;
+            margin-top: 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .section {
+            background-color: rgba(255,255,255,0.08);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(108,99,255,0.3);
+            transition: 0.3s ease;
+        }
+		
+		.align {
+			text-align: justify;
+			line-height: 1.2;
+		}
+
+        .section:hover {
+            transform: translateY(-5px);
+            border: 1px solid #00f7ff;
+        }
+		
+		.profile-img {
+			width: 140px;
+			height: 140px;
+			object-fit: cover;
+			border-radius: 50%;
+			margin-top: 10px;
+			border: 2px solid #6c63ff;
+			display: block;
+			margin: 10px auto;
+		}
+
+        button {
+            background-color: #6c63ff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #00f7ff;
+            color: black;
+        }
+
+        hr {
+            border: 1px solid #6c63ff;
+            margin: 30px 0;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes slideDown {
+            from {transform: translateY(-40px); opacity: 0;}
+            to {transform: translateY(0); opacity: 1;}
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="dashboard-header">
+        <h1>🎮 My Ultimate College Life</h1>
+        <p style="text-align:center;">Status: Active | Mode: Student Life | Focus: Growth 💻</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="section">
+            <h2>👤 Full Name</h2>
+            <p><b>Al Joshua M. Nocos</b></p>
+			<img src="profile.jpg" alt="Profile Picture" class="profile-img">
+        </div>
+
+        <div class="section">
+            <h2>✨ Short Introduction</h2>
+            <p class = "align">Hello! I’m <b>Al Joshua Nocos</b>, a Computer Science student navigating college life one algorithm at a time 💻. 
+            I enjoy solving logical problems and improving my programming skills. Outside academics, I balance my student life 
+			with games, series, and music. College may be challenging, but growth comes from consistency and curiosity.</p>
+        </div>
+
+        <div class="section">
+            <h2>🎒 College Must-Haves</h2>
+            <ul>
+                <li>Laptop 💻</li>
+				<li>Stable Internet 🌐</li>
+				<li>Notebook & Pen 📝</li>
+				<li>Coffee ☕</li>
+				<li>Discipline & Focus</li>
+                <li>Sleep (when possible 😅)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>⏰ Daily Routine</h2>
+            <ol>
+                <li>Wake up and prepare for class</li>
+                <li>Attend lectures and take notes</li>
+                <li>Work on programming tasks or assignments</li>
+				<li>Eat meals and scroll social media</li>
+				<li>Review lessons in the afternoon</li>
+                <li>Play games (Wuthering Waves / League) 🎮</li>
+				<li>Watch a tv series or a movie</li>
+				<li>Sleep and recharge</li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h2>🎧 Hobbies</h2>
+            <ul>
+                <li>Playing <i>Wuthering Waves</i></li>
+                <li>Playing <i>League of Legends</i></li>
+                <li>Watching TV Series  📺</li>
+                <li>Listening to music 🎧</li>
+            </ul>
+        </div>
+		
+		<div class="section">
+            <h2>🌱 Current Goals</h2>
+            <ul>
+                <li>Improve Data Structures and Algorithms</li>
+                <li>Build more projects</li>
+                <li>Learn full-stack development</li>
+                <li>Become a versatile tech professional</li>
+            </ul>
+        </div>
+
+        <div class="section">
+			<h2>🎮 Daily Quest</h2>
+			<p>Click the button to reveal today's mission.</p>
+			<button onclick="showMessage()">Reveal Daily Quest 🎮</button>
+		</div>
+
+    </div>
+
+    <hr>
+    <p style="text-align:center;"><i>© 2026 My College Life Webpage</i></p>
+
+</div>
+
+<script>
+function showMessage() {
+
+    var quests = [
+        "Attend all classes without zoning out.",
+        "Finish at least one assignment.",
+        "Review lessons for 30 minutes.",
+        "Win at least one game in League 😤",
+        "Survive the day and go home to sleep 😴",
+        "Drink water and stay alive 💧"
+    ];
+
+    var randomQuest = quests[Math.floor(Math.random() * quests.length)];
+
+    alert("🎯 Today's Quest: " + randomQuest);
+}
+</script>
+
+</body>
+</html>
